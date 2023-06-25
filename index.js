@@ -61,7 +61,6 @@ client.once(Events.ClientReady, (c) => {
 
 	setInterval(async () => {
 		const response = await axios.get(`${process.env["DYNMAP_IP"]}/up/world/world/`);
-
 		const updates = response["data"]["updates"];
 
 		for (const update of updates) {

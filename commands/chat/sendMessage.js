@@ -14,13 +14,14 @@ module.exports = {
 		.setDescription("Sends message through Dynmap!")
 		.addStringOption((option) => option.setName("message").setDescription("Chat Message").setRequired(true)),
 	async execute(interaction) {
-		const message = interaction.options.getString("message");
+		let message = interaction.options.getString("message");
+		message = `${interaction.user.username} says: ${message}`
 
 		await axios.post(`${process.env["DYNMAP_IP"]}/up/sendmessage`, {
-			name: "ChatLog",
+			name: interaction.user.username,
 			message: message
 		});
 
-		await interaction.reply("Posted to Dynmap");
+		await interaction.reply({ content: `Posted to Dynmap under ${interaction.user.username}`, ephemeral: true });
 	}
 };
