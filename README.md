@@ -1,6 +1,6 @@
 # Dynmap Chatlog
 
-A substitute for Discord-SRV, it bridges Minecraft and Discord chat.
+A substitute for Discord-SRV, it bridges Minecraft and Discord chat using Dynmap.
 
 ## How To Install
 
